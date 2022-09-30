@@ -1,0 +1,12 @@
+{
+  "name": "create-nuxt3-app",
+  "version": "0.0.1",
+  "description": "Generate a Nuxt3 project in seconds!",
+  "main": "index.js",
+  "scripts": {
+    "plop": "plop"
+  },
+  "devDependencies": {
+    "plop": "^2.6.0"
+  }
+}
