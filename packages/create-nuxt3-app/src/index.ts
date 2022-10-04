@@ -13,7 +13,7 @@ import nodePlop from 'node-plop';
   const cnaTemplateDir = join(dirname(require.resolve('cn3a-plop-files/package.json')))
   const plopFile = join(cnaTemplateDir, 'plopfile.js')
    */
-  const plop = await nodePlop(`TODO`);
+  const plop = await nodePlop(`/Users/zoey/Documents/Development/SideStream/sidebase/create-nuxt3-app/packages/cn3a-plop-files/plopfile.js`);
   const sidebaseGenerator = plop.getGenerator('sidebase');
 
   const projectPath = `${process.cwd()}/${answers.projectName}`
