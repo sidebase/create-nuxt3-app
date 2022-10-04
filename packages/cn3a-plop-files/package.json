@@ -1,0 +1,14 @@
+{
+  "name": "cn3a-plop-files",
+  "version": "0.0.1",
+  "scripts": {
+    "plop": "plop"
+  },
+  "files": [
+    "plops",
+    "plop-templates"
+  ],
+  "devDependencies": {
+    "plop": "^2.6.0"
+  }
+}

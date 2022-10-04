@@ -1,8 +1,0 @@
-{
-  "name": "cn3a-templates",
-  "version": "0.0.1",
-  "description": "A collection of template files for create-nuxt3-app.",
-  "files": [
-    "template"
-  ]
-}
