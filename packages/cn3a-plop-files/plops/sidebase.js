@@ -9,8 +9,8 @@ module.exports = {
     {
       type: 'list',
       name: 'ci',
-      message: 'Would you like to use Github Actions?',
-      choices: ['Yes', 'No'],
+      message: 'Which CI would you like to use?',
+      choices: ['github-actions', 'none'],
     },
   ],
   actions: (data) => {
@@ -19,23 +19,12 @@ module.exports = {
     // Import basic files
     actions = actions.concat(
       {
-        type: 'addMany',
-        destination: '{{projectPath}}/',
-        base: 'plop-templates/sidebase-main/',
-        templateFiles: 'plop-templates/sidebase-main/**/**',
-        abortOnFail: false,
+        type: "copy",
+        src: "plop-templates/sidebase-main/",
+        dest: "{{projectPath}}"
       });
 
-    // Import hidden GitHub files
-    actions = actions.concat(
-      {
-        type: 'addMany',
-        destination: '{{projectPath}}/',
-        base: 'plop-templates/sidebase-main/',
-        templateFiles: 'plop-templates/sidebase-main/.github/**',
-        abortOnFail: false,
-      });
-
+    // Import CI
     if (data.ci === 'github-actions') {
       actions = actions.concat({
         type: 'add',

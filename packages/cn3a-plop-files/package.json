@@ -10,5 +10,8 @@
   ],
   "devDependencies": {
     "plop": "^2.6.0"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0"
   }
 }

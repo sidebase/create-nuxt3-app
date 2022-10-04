@@ -19,5 +19,6 @@ import nodePlop from 'node-plop';
   const projectPath = `${process.cwd()}/${answers.projectName}`
   sidebaseGenerator.runActions({ projectPath, ci: answers.ci }).then(function (results) {
     console.log("YAYYY; MAybe it worked? IDK, please help me")
+    console.log('Errors:', results.failures)
   });
 })()
