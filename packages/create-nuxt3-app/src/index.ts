@@ -6,7 +6,6 @@ import nodePlop from 'node-plop';
 
 (async () => {
   generateWelcomeMessage();
-
   const answers = await getUserInput()
 
   /* Get the plop file from the external folder
@@ -18,7 +17,14 @@ import nodePlop from 'node-plop';
 
   const projectPath = `${process.cwd()}/${answers.projectName}`
   sidebaseGenerator.runActions({ projectPath, ci: answers.ci }).then(function (results) {
-    console.log("YAYYY; MAybe it worked? IDK, please help me")
-    console.log('Errors:', results.failures)
+    if (results.failures.length !== 0) {
+      console.error("An error has occurred while scaffolding your project.")
+      return console.log('Errors:', results.failures)
+    }
+    console.log("Your project has been created.")
+    console.log("Next steps:")
+    console.log(`cd /${answers.projectName}`)
+    console.log("npm install")
+    console.log("npm run dev")
   });
 })()

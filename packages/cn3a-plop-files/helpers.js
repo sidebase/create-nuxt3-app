@@ -1,4 +1,4 @@
-export function combinePackageJson(primaryJSON, secondaryJSON) {
+module.exports = function combinePackageJson(primaryJSON, secondaryJSON) {
   const fileData = primaryJSON;
 
   // Add dependencies
