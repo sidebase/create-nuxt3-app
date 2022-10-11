@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 import {getUserInput} from "./prompts"
 import {generateWelcomeMessage} from './messages'
-// import {dirname, join} from 'path'
 import nodePlop from 'node-plop';
+import { resolve } from 'path'
 
 (async () => {
   generateWelcomeMessage();
+  const plopFileLocation = resolve('cn3a-plop-files', 'plopfile.js')
   const answers = await getUserInput()
 
-  /* Get the plop file from the external folder
-  const cnaTemplateDir = join(dirname(require.resolve('cn3a-plop-files/package.json')))
-  const plopFile = join(cnaTemplateDir, 'plopfile.js')
-   */
-  const plop = await nodePlop(`/Users/zoey/Documents/Development/SideStream/sidebase/create-nuxt3-app/packages/cn3a-plop-files/plopfile.js`);
+  const plop = await nodePlop(plopFileLocation);
   const sidebaseGenerator = plop.getGenerator('sidebase');
 
   const projectPath = `${process.cwd()}/${answers.projectName}`
