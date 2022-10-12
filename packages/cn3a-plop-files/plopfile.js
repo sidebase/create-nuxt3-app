@@ -1,6 +1,6 @@
 const { sidebase } = require('./plops');
 const fs = require('fs-extra');
-const {combinePackageJson} = require("./helpers");
+const { defu } = require('defu')
 
 module.exports = function (plop) {
   // Create custom Plop Action to copy files without parsing them
@@ -10,13 +10,16 @@ module.exports = function (plop) {
     fs.copySync(srcDir, destDir, { overwrite: false })
   })
 
-  // Create custom Plop action to merge two package.json files
-  plop.setActionType('mergePackageJSON', (answers, config, plop) => {
-      fs.readJson(config.mainJSONFile, {}, (err, fileData) => {
-        fs.readJson(config.secondJSONFile, {}, (err, secondFileData) => {
-          const json = combinePackageJson(fileData, secondFileData)
+  /*
+  Create custom Plop action to merge two package.json files
+  Takes primaryJSONFile, secondaryJSONFile and dest as the output
+  */
+  plop.setActionType('mergeJSON', (answers, config, plop) => {
+      fs.readJson(config.primaryJSONFile, {}, (err, primaryJSONFileData) => {
+        fs.readJson(config.secondaryJSONFile, {}, (err, secondaryJSONFileData) => {
+          const json = defu({...primaryJSONFileData, ...secondaryJSONFileData})
 
-          fs.writeJson(config.JSONFile, json, {spaces: 2}, err => {
+          fs.writeJson(config.dest, json, {spaces: 2}, err => {
             console.error(err);
           });
         })
