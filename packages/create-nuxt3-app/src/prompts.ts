@@ -1,11 +1,16 @@
 import prompts, { PromptObject } from "prompts"
-import {PromptQuestions} from "./types";
 
 const PROMPT_QUESTIONS: PromptObject[] = [
   {
     type: "text",
     name: "projectName",
     message: "What should the project be called?"
+  },
+  {
+    type: 'confirm',
+    name: 'server',
+    message: 'Would you like a backend?',
+    initial: true
   },
   {
     type: "select",
@@ -24,10 +29,11 @@ const onCancel = () => {
   process.exit()
 }
 
-export const getUserInput = async function (): Promise<PromptQuestions> {
+export const getUserInput = async function () {
   const response = await prompts(PROMPT_QUESTIONS, { onCancel })
   return {
     projectName: response.projectName,
+    server: response.server,
     ci: response.ci
   };
 }

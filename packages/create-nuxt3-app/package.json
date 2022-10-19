@@ -27,7 +27,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "templates"
   ],
   "repository": {
     "type": "git",
@@ -58,7 +59,7 @@
     "vitest": "^0.23.1"
   },
   "dependencies": {
-    "cn3a-plop-files": "file:../cn3a-plop-files",
+    "fs-extra": "^10.1.0",
     "node-plop": "^0.31.0",
     "prompts": "^2.4.2"
   }
