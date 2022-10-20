@@ -39,7 +39,7 @@ const addTemplates = function (basePlop: NodePlopAPI) {
         {
           type: "copy",
           src: `${templateRoot}/sidebase-main/`,
-          dest: "{{projectPath}}/"
+          dest: `${data?.projectPath}/`
         });
 
       if (data?.server) {
@@ -47,13 +47,13 @@ const addTemplates = function (basePlop: NodePlopAPI) {
           {
             type: "copy",
             src: `${templateRoot}/with-server/`,
-            dest: "{{projectPath}}/"
+            dest: `${data?.projectPath}/`
           },
           {
             type: "mergeJSON",
             primaryJSONFile: `${templateRoot}/sidebase-main/package.json`,
             secondaryJSONFile: `${templateRoot}/with-server/package.json`,
-            dest: "{{projectPath}}/package.json"
+            dest: `${data?.projectPath}/package.json`
           }
         );
       }
