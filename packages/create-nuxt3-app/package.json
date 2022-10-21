@@ -4,7 +4,7 @@
     "node": ">=16.14.2",
     "npm": ">=8.5.0"
   },
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.4",
   "description": "Create a nuxt 3 app in seconds",
   "bin": "dist/index.js",
   "scripts": {
