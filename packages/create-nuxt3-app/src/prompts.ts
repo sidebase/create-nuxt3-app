@@ -7,12 +7,6 @@ const PROMPT_QUESTIONS: PromptObject[] = [
     message: "What should the project be called?"
   },
   {
-    type: 'confirm',
-    name: 'server',
-    message: 'Would you like a backend?',
-    initial: true
-  },
-  {
     type: "select",
     name: "ci",
     message: "Which CI would you like to use?",
