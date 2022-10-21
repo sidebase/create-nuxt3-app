@@ -3,6 +3,7 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   test: {
+    exclude: ['**/templates/**'],
     threads: false,
     coverage: {
       enabled: false,
