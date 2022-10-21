@@ -42,12 +42,12 @@
     "setup",
     "typescript"
   ],
-  "author": "sidestream-tech <support@sidestream.tech>",
+  "author": "sidebase <sidebase@sidestream.tech>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sidestream-tech/sidebase/issues/new/choose"
+    "url": "https://github.com/sidebase/sidebase/issues/new/choose"
   },
-  "homepage": "https://github.com/sidestream-tech/sidebase-libs/tree/main/packages/create-nuxt3-app",
+  "homepage": "https://sidebase.io",
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/prompts": "^2.0.14",
