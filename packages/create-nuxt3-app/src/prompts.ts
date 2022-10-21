@@ -29,5 +29,5 @@ export const getUserInput = async function () {
     projectName: response.projectName,
     server: response.server,
     ci: response.ci
-  };
+  }
 }
