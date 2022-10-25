@@ -4,7 +4,7 @@
     "node": ">=16.14.2",
     "npm": ">=8.5.0"
   },
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.5",
   "description": "Create a nuxt 3 app in seconds",
   "bin": "dist/index.js",
   "scripts": {
@@ -49,6 +49,7 @@
   },
   "homepage": "https://sidebase.io",
   "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
     "@types/fs-extra": "^9.0.13",
     "@types/prompts": "^2.0.14",
     "@typescript-eslint/eslint-plugin": "^5.36.2",

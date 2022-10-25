@@ -1,16 +1,16 @@
-import {NodePlopAPI} from "node-plop"
-import fs from "fs-extra"
-import defu from "defu"
+import type { NodePlopAPI } from 'node-plop'
+import fs from 'fs-extra'
+import defu from 'defu'
 
 const addActions = function (plop: NodePlopAPI) {
-  plop.setActionType("copy", (answers, config, plop) => {
+  plop.setActionType('copy', (answers, config, plop) => {
     const srcDir = plop.renderString(config.src, answers)
     const destDir = plop.renderString(config.dest, answers)
     fs.copySync(srcDir, destDir, { overwrite: false })
-    return "success"
+    return 'success'
   })
 
-  plop.setActionType("mergeJSON", async (answers, config, plop) => {
+  plop.setActionType('mergeJSON', async (answers, config, plop) => {
     const primaryJSONFile = plop.renderString(config.primaryJSONFile, answers)
     const secondaryJSONFile = plop.renderString(config.secondaryJSONFile, answers)
 
@@ -19,7 +19,7 @@ const addActions = function (plop: NodePlopAPI) {
 
     const combinedJSON = defu(primaryJSON, secondaryJSON)
     await fs.writeJson(config.dest, combinedJSON)
-    return "success"
+    return 'success'
   })
 
   return plop

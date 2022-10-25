@@ -19,18 +19,20 @@ $ npx create-nuxt3-app
 
 - CI/CD Pipeline
   - None
-  - GitHub Actions
-  - Drone (coming soon!)
+  - [GitHub Actions](https://github.com/features/actions)
+  - [Drone](https://www.drone.io/) (coming soon!)
 - Component Library
   - None
-  - AntDesign Vue (currently included)
-  - PrimeVue (coming soon!)
+  - [AntDesign Vue](https://antdv.com/components/overview) (currently included)
+  - [PrimeVue](https://www.primefaces.org/primevue/) (coming soon!)
 - Component Stories
-  - historie (currently included)
-  - Storybook (coming soon!)
+  - [histoire](https://histoire.dev/) (currently included)
+  - [Storybook](https://storybook.js.org/) (coming soon!)
 - Linting tools
+  - [ESLint](https://eslint.org/) (currently included)
+  - [Prettier](https://prettier.io/) (currently included)
 - Testing framework
-  - ViTest (currently included)
+  - [Vitest](https://vitest.dev/) (currently included)
 
 We are always looking for more options to include! Join in on the conversation [here](https://github.com/sidebase/sidebase/issues/70)!
 
