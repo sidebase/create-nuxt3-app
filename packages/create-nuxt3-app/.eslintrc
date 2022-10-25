@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "@antfu"
+    ],
+    "overrides": [],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "curly": [
+            "error",
+            "all"
+        ],
+        "brace-style": "off",
+        "@typescript-eslint/brace-style": [
+            "error",
+            "1tbs"
+        ],
+        "no-unused-vars": "error",
+        "no-console": ["error", {"allow": ["error", "info"]}]
+    }
+}
